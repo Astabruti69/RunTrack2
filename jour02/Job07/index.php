@@ -40,4 +40,3 @@ for ($i = 0; $i < $hauteur; $i++) {
 </pre>
 </body>
 </html>
-
