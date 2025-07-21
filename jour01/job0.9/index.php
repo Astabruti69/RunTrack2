@@ -1,9 +1,7 @@
 <?php
-$str = "LaPlateforme";
-$str2 = "Hello";
-$str3 = "!";
+$var = "Hello";
+$var2 = "LaPlateforme";
+$var3 = "!";
 
-
-
-echo $str2. $str . $str3;
+echo "$var $var2 $var3";
 ?>

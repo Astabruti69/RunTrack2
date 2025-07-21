@@ -1,11 +1,18 @@
 <?php
-$str = "LaPlateforme";
-$str2 = "Vive";
-$str3 = "!";
-$val = "6";
+$str = 'LaPlateforme';
+$str2 = 'Vive';
+$str3 = '!';
 
+echo $str2 . $str . $str3 . "<br>";
 
+$val = 6;
+$val = $val + 4;
 
-echo $str . $str2 . $str3 . $val ;
+echo "$val <br>";
+
+$myBool ='True';
+echo " $myBool <br>";
+
+$myBool = 'False';
+echo "$myBool"
 ?>
-<!-- commentaire php -->
