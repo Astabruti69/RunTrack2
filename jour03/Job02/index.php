@@ -1,19 +1,8 @@
 <?php
-$str = 'Tous ces instants seront perdus dans le temps comme les larmes sous la pluie';
+$str = "Tous ces instants seront perdus dans le temps comme les larmes sous la pluie";
+$result = "";
 
-function isPrime($str) {
-    $i=0;
-    if ()
+for ($i = 0; $i < strlen($str); $i+=2) {
+    $result = $str[$i];
+    echo $result;
 }
-//initialitation
-function unesurdeux($str)
-{
-    //condition 
-    $i = 0;
-    while (isset($str[$i])) {
-        echo $str[$i];
-        //itereur 
-        $i++;
-    }
-}
-unesurdeux($str);
