@@ -1,5 +1,6 @@
 <?php
-$str = "On n’est pas le meilleur quand on le croit mais quand on le sait.";
+$str = "On n’est pas le meilleur quand on le croit mais quand on le sait";
+$res = str_replace(["’", " "], "", $str);
 $dic = array (
     'consonnes' => 0,
     'voyelles' => 0
@@ -9,8 +10,8 @@ $voyelle = array (
     'a', 'e', 'i', 'o', 'u', 'y'
  );
 
-    for($i = 0;$i < strlen($str); $i++) {
-        if(in_array($str[$i], $voyelle)) {
+    for($i = 0;$i < strlen($res); $i++) {
+        if(in_array($res[$i], $voyelle)) {
              $dic['voyelles'] = $dic['voyelles'] + 1;
         } else {
             $dic ['consonnes'] = $dic ['consonnes'] + 1;
@@ -26,7 +27,7 @@ $voyelle = array (
     <title>Job05</title>
 </head>
 <body>
-    <table>
+    <table border = "1">
         <thead>
             <tr>
                 <th>Consonnes</th>
