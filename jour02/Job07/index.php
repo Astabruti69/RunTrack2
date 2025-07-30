@@ -1,19 +1,28 @@
 <?php
-
 $hauteur = 5;
-// initialisation a 0 donc 5 ligne 
-for ($i = 0; $i < $hauteur; $i++){
-// espace à gauche pour centrer plus ça descend moins y a d'espaces
-    for ($espace = 0; $espace < $hauteur - $i - 1; $espace++) {
-// affiche espace pour centrer
-         echo "&nbsp; "; 
+$largeur = 5;
+
+
+for ($y = 1 ; $y <= $hauteur ; $y++) {
+        for($x= 1; $x <= $hauteur - $y; $x ++) {
+                echo "&nbsp&nbsp";
         }
-//etoiles
-        for ($etoiles = 0; $etoiles < 2 * $i + 1; $etoiles++) {
-             echo "*"; 
+
+        for ($x=1; $x <= ($y * 2 - 1) ; $x++) { 
+                if ($x ==1) {
+                        echo "/";
+                }
+                if ($x == 2 * $y - 1) {
+                        echo "\\";
+                }
+                elseif ($y == $hauteur) {
+                        echo "_";
+                }
+                else {
+                        echo "&nbsp&nbsp";
+                }
         }
-//après une ligne retour a la ligne
         echo "<br>";
-
-
 }
+
+?>

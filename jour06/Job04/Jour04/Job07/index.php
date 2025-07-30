@@ -12,6 +12,9 @@
         <input type="submit" value="OK">
     </form>
         <?php
+        $largeur =$_GET['largeur'];
+        $hauteur =$_GET['hauteur'];
+        
         
         ?>
 </body>
