@@ -46,8 +46,4 @@ for ($ligne = 0; $ligne < $hauteur; $ligne++) {
     }
     echo "<br>";
 }
-
-
-
-
 ?>
