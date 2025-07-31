@@ -27,10 +27,12 @@
         <input type="submit" value="Submit">
     </form>
     <table>
-        <tr>
-            <th>Argument</th>
-            <th>Valeur</th>
-        </tr>
+        <thead>
+            <tr>
+                <th>Argument</th>
+                <th></th>
+            </tr>
+        </thead>
         <tr>
             <td><?php
             echo "Prenom";

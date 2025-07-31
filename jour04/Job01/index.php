@@ -6,18 +6,24 @@
     <title>Document</title>
 </head>
 <body>
-    <form method="get">
-<label>
-        Nom <br/>
+    <?php
+    $count = 0;
+    foreach ($_GET as $key => $value) {
+        $count++;
+    }
+    ?>
+    <form method="GET">
+<label>Nom <br/></label>
         <input type="text" name="name"><br/>
-</label>        
+<label>Prenom<br/></label>
+        <input type="text" name="prenom"><br/>
+<label>Ville<br/></label>
+        <input type="text" name="ville"><br/>
         <input type="submit" value="envoyer">
     </form>
     <?php
-    var_dump($_GET);
-    if (isset($_GET["name"])) {
-        echo "Le nombre d'argument GET envoyer est : ". $_GET['name'];
-    }
+    echo "Le nombre d’argument GET envoyé est : " . $count;
     ?>
+
 </body>
 </html>
