@@ -1,6 +1,6 @@
 <?php
-$hauteur = 10;
-$largeur = 10;
+$hauteur = 20;
+$largeur = 20;
 echo "<pre>";
 
 for ($y = 1; $y <= $hauteur; $y++){

@@ -15,35 +15,48 @@
         <input type="submit" value="VALIDER">
     </form>
 
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
+$hauteur =$_GET["Hauteur"];
+$largeur =$_GET["Largeur"];
+// Triangle
+for ($y = 1 ; $y <= $hauteur ; $y++) {
+        for($x= 1; $x <= $hauteur - $y; $x ++) {
+                echo "&nbsp&nbsp";
+        }
+
+        for ($x=1; $x <= ($y * 2 - 1) ; $x++) { 
+                if ($x ==1) {
+                        echo "/";
+                }
+                if ($x == 2 * $y - 1) {
+                        echo "\\";
+                }
+                else {
+                        echo "_";
+                }
+        }
+        echo "<br>";
+}
+}
+
+// Rectangle
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
+ for ($y= 1; $y <= $hauteur ; $y++) { 
+    for ($x=1; $x <= $largeur ; $x++) { 
+        if ($x == 1 || $x == $largeur) {
+            echo"|";
+        } elseif ($y == $hauteur) {
+            echo"_";
+        } else {
+            echo "&nbsp&nbsp";
+        }
+    }
+    echo "<br/>";
+ }
+ }
+?>
+
 </body>
 
 </html>
-
-<?php
-
-$hauteur = $_GET["Hauteur"] ?? "null";
-$largeur = $_GET["Largeur"] ?? "null";
-$tiret = "|&nbsp;";
-$etoile = "*&nbsp;";
-
-
-
-// Triangle
-
-for ($i = 0; $i < $hauteur; $i++){
-    echo str_repeat('&nbsp;',($hauteur-$i)); 
-    for($j = 0; $j <= $i; $j++){
-        echo $etoile;
-    }
-        echo "<br>";
-    }
-
-// Rectangle
-
-for ($ligne = 0; $ligne < $hauteur; $ligne++) {
-    for ($colonne = 0; $colonne < $largeur; $colonne++) {
-        echo $tiret;
-    }
-    echo "<br>";
-}
-?>
