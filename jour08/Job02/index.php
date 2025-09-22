@@ -2,7 +2,6 @@
 Afficher le contenu du cookie.
 Ajoutez un bouton nommé “reset” qui permet de réinitialiser ce compteur. -->
 <?php
-// $ret = null;
 $nbvisits = 0;
 
 if (isset($_COOKIE['nbvisites'])) { //si il existe le nbvisites
