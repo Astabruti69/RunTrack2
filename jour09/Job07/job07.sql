@@ -2,4 +2,4 @@
 -- des informations des étudiants qui ont plus de 18 ans.
 SELECT *
 FROM etudiants
-WHERE naissance > '2007-01-01';
+WHERE naissance < '2007-01-01';

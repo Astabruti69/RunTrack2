@@ -1,14 +1,15 @@
 <!-- En utilisant php, connectez-vous à la base de données “jour09”. A l’aide d’une requête
-SQL, récupérez l’ensemble des informations des étudiants qui ont moins de 18 ans.
-Affichez le résultat de cette requête dans un tableau html. La première ligne de votre
-tableau html doit contenir le nom des champs. Les suivantes doivent contenir les
-données présentes dans votre base de données. -->
+SQL, sélectionnez récupérer le nom des salles et le nom de leur étage. Affichez le
+résultat de cette requête dans un tableau html. La première ligne de votre tableau html
+doit contenir le nom des champs. Les suivantes doivent contenir les données présentes
+dans votre base de données. -->
 <?php
 require_once('connection_bdd.php');
-
-$requete = "SELECT *
-            FROM etudiants
-            WHERE naissance > '2007-01-01';";
+// on met AS pour quil affiche sa comme nom en bdd et on peut 
+// aussi ustiliser ce qui est marquer apres AS dans echo pour le afficher dans le php. 
+$requete = "SELECT salles.nom AS nom_salle, etage.nom AS nom_etage
+            FROM salles
+            JOIN etage ON salles.id_etage = etage.id";
 $result = $conn->query($requete);
 ?>
 <!DOCTYPE html>
@@ -17,7 +18,7 @@ $result = $conn->query($requete);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Job05Jour10</title>
+    <title>Job13Jour10</title>
     <style>
         tr th {
             padding: 20px;
@@ -33,11 +34,8 @@ $result = $conn->query($requete);
     <table border="1">
         <thead>
             <tr>
-                <th>Prenom</th>
-                <th>Nom</th>
-                <th>Naissance</th>
-                <th>Sexe</th>
-                <th>Email</th>
+                <th>Nom Salles</th>
+                <th>Nom Etage</th>
             </tr>
         </thead>
         <tbody>
@@ -45,11 +43,8 @@ $result = $conn->query($requete);
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
                     echo "<tr>";
-                    echo "<td>" . $row['prenom'] . "</td>";
-                    echo "<td>" . $row['nom'] . "</td>";
-                    echo "<td>" . $row['naissance'] . "</td>";
-                    echo "<td>" . $row['sexe'] . "</td>";
-                    echo "<td>" . $row['email'] . "</td>";
+                    echo "<td>" . $row['nom_salle'] . "</td>";
+                    echo "<td>" . $row['nom_etage'] . "</td>";
                     echo "</tr>";
                 }
             } else {
