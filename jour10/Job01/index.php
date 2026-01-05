@@ -10,7 +10,10 @@ require_once('connection_bdd.php');
 //la requete sql je le stock dans un variable 
 $requete = "SELECT * FROM etudiants";
 
-// on stocke le resultat de la requete dans une variable 
+//on stocke le resultat de la requete dans une variable
+//et dis dans le resultat tu fais la connection dans la base de données
+//et tu execute ce requete la donc dans le resultat ta tout les données que
+//tu voulais avec la requete sql.
 $result = $conn->query($requete);// syntaxe mysqli
 
 ?>
